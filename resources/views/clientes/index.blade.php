@@ -17,13 +17,26 @@
 </div>
 @endif
 
-<form method="post">
+<form method="post" class="row gy-2 gx-3 align-items-center">
     @csrf
-    <div class="input-group">
-        <input type="text" name="nome" id="nome" class="form-control" placeholder="Nome" aria-label="Nome do cliente" aria-describedby="button-adicionar">
-        <button type="submit" id="button-adicionar" class="btn btn-primary">Adicionar</button>
+    <div class="col-auto">
+        <label for="nome" class="visually-hidden">Nome</label>
+        <input type="text" name="nome" id="nome" class="form-control" placeholder="Anderson">
     </div>
 
+    <div class="col-auto">
+        <label class="visually-hidden" for="empresa_id">Empresa</label>
+        <select class="form-select" name="empresa_id" id="empresa_id">
+            <option selected>Choose...</option>
+            @foreach($empresas as $empresa)
+            <option value="{{$empresa->id}}">{{$empresa->empresa}}</option>
+            @endforeach
+        </select>
+    </div>
+
+    <div class="col-auto">
+        <button type="submit" class="btn btn-primary">Adicionar</button>
+    </div>
 </form>
 
 <table class="table table-sm table-hover table-striped mt-5">
