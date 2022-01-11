@@ -24,15 +24,17 @@ class ClienteFormRequest extends FormRequest
     public function rules()
     {
         return [
-            'nome' => 'required|min:2'
+            'nome' => 'required|min:2',
+            'empresa_id' => 'required'
         ];
     }
 
     public function messages()
     {
         return [
-            'required' => 'O campo :attribute é obrigatório',
-            'min' => 'O campo :attribute precisa ter pelo menos 2 caracteres'
+            'nome.required' => 'Nome é obrigatório',
+            'nome.min' => 'Nome precisa ter pelo menos 2 caracteres',
+            'empresa_id.required' => 'Empresa é obrigatório'
         ];
     }
 }

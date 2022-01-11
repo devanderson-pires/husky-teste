@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateEmpresasTable extends Migration
+class CreateEntregadoresTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,11 @@ class CreateEmpresasTable extends Migration
      */
     public function up()
     {
-        Schema::create('empresas', function (Blueprint $table) {
+        Schema::create('entregadores', function (Blueprint $table) {
             $table->tinyIncrements('id');
-            $table->string('empresa')->unique();
+            $table->string('nome')->unique();
+            $table->tinyInteger('empresa_id');
+            $table->foreign('empresa_id')->references('id')->on('empresas');
         });
     }
 
@@ -26,6 +28,6 @@ class CreateEmpresasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('empresas');
+        Schema::dropIfExists('entregadores');
     }
 }
