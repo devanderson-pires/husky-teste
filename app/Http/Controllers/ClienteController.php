@@ -11,7 +11,7 @@ class ClienteController extends Controller
     public function index(Request $req)
     {
         $feedback = $req->session()->get('feedback');
-        $clientes = Cliente::query()->orderBy('empresa')->get();
+        $clientes = Cliente::query()->orderBy('nome')->get();
 
         return view('clientes.index', compact('feedback', 'clientes'));
     }
@@ -20,10 +20,10 @@ class ClienteController extends Controller
     {
         $req->validate($req->rules());
 
-        $empresa = $req->empresa;
-        $cliente = Cliente::create(['empresa' => $empresa]);
+        $nome = $req->nome;
+        $cliente = Cliente::create(['nome' => $nome]);
 
-        $req->session()->flash('feedback', "{$cliente->empresa} criado com sucesso");
+        $req->session()->flash('feedback', "{$cliente->nome} criado com sucesso");
         return redirect('clientes');
     }
 }

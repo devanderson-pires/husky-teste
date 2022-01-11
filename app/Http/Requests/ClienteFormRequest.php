@@ -24,7 +24,7 @@ class ClienteFormRequest extends FormRequest
     public function rules()
     {
         return [
-            'empresa' => 'required|min:2'
+            'nome' => 'required|min:2'
         ];
     }
 

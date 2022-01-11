@@ -10,5 +10,5 @@ class Cliente extends Model
     use HasFactory;
 
     public $timestamps = false;
-    protected $fillable = ['empresa'];
+    protected $fillable = ['nome'];
 }
