@@ -1,3 +1,16 @@
-// default variables overrides
-$body-bg: #5d11c6;
-$primary: #5d11c6;
+// main-content
+$mc-body-bg: #fff;
+$mc-body-color: #181b1a;
+$mc-input-bg: #f6f6f5;
+
+// custom colors
+$custom-body-bg: #503e9d;
+$custom-body-color: #181b1a;
+$custom-input-bg: #f6f6f5;
+
+// bootstrap variables overrides
+$body-bg: $custom-body-bg;
+$body-color: $custom-body-color;
+$primary: #fb6d3a;
+$input-bg: $custom-input-bg;
+$btn-font-weight: 600;

@@ -27,7 +27,7 @@
     <div class="col-auto">
         <label class="visually-hidden" for="empresa_id">Empresa</label>
         <select class="form-select" name="empresa_id" id="empresa_id">
-            <option value="" selected>Empresa...</option>
+            <option value="" selected>Selecione a empresa</option>
             @foreach($empresas as $empresa)
             <option value="{{$empresa->id}}">{{$empresa->empresa}}</option>
             @endforeach

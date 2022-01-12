@@ -1,3 +1,14 @@
-@import "variables";
+@import "variables", "../../node_modules/bootstrap/", "main-content";
 
-@import "../../node_modules/bootstrap/";
+@mixin button-variant($color) {
+    color: $color;
+}
+
+.btn {
+    @include button-variant($mc-body-bg);
+
+    &:focus,
+    &:hover {
+        color: $mc-body-bg;
+    }
+}
