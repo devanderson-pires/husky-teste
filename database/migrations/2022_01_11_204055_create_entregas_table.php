@@ -16,7 +16,7 @@ class CreateEntregasTable extends Migration
         Schema::create('entregas', function (Blueprint $table) {
             $table->tinyIncrements('id');
             $table->tinyInteger('cliente_id');
-            $table->tinyInteger('entregador_id');
+            $table->tinyInteger('entregador_id')->default(1);
             $table->string('status');
             $table->string('ponto_coleta');
             $table->string('ponto_destino');

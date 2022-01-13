@@ -16,8 +16,6 @@ class CreateEntregadoresTable extends Migration
         Schema::create('entregadores', function (Blueprint $table) {
             $table->tinyIncrements('id');
             $table->string('nome')->unique();
-            $table->tinyInteger('empresa_id');
-            $table->foreign('empresa_id')->references('id')->on('empresas');
         });
     }
 

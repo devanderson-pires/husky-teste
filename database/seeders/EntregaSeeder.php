@@ -19,7 +19,7 @@ class EntregaSeeder extends Seeder
             'entregador_id' => 1,
             'status' => 'Novo',
             'ponto_coleta' => 'Rua 1',
-            'ponto_destino' => 'Rua 23'
+            'ponto_destino' => 'Rua 2'
         ]);
     }
 }

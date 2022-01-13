@@ -15,8 +15,7 @@ class EntregadorSeeder extends Seeder
     public function run()
     {
         Entregador::create([
-            'nome' => 'Mateus',
-            'empresa_id' => 1
+            'nome' => 'Não atribuído',
         ]);
     }
 }

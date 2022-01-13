@@ -10,13 +10,8 @@ class Entregador extends Model
     use HasFactory;
 
     public $timestamps = false;
-    protected $fillable = ['nome', 'empresa_id'];
+    protected $fillable = ['nome'];
     protected $table = 'entregadores';
-
-    public function empresa()
-    {
-        return $this->belongsTo(Empresa::class);
-    }
 
     public function entregas()
     {

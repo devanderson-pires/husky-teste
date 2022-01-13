@@ -15,9 +15,4 @@ class Empresa extends Model
     {
         return $this->hasMany(Cliente::class);
     }
-
-    public function entregadores()
-    {
-        return $this->hasMany(Entregador::class);
-    }
 }

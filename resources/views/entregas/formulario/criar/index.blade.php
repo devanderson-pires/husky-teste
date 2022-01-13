@@ -32,9 +32,12 @@
                     <div class="col-auto my-2">
                         <label class="visually-hidden" for="entregador_id">Entregador</label>
                         <select class="form-select" name="entregador_id" id="entregador_id">
-                            <option value="" selected>Selecione o entregador</option>
                             @foreach($entregadores as $entregador)
+                            @if($entregador->id === 1)
+                            <option value="{{$entregador->id}}" selected>{{$entregador->nome}}</option>
+                            @else
                             <option value="{{$entregador->id}}">{{$entregador->nome}}</option>
+                            @endif
                             @endforeach
                         </select>
                     </div>
