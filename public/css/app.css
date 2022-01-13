@@ -11288,10 +11288,8 @@ textarea.form-control-lg {
 .main-content {
   background-color: #fff;
   border-radius: 3rem;
-  height: 100vh;
   padding: 3rem;
 }
-
 @media (max-width: 767.98px) {
   .main-content {
     border-radius: 1.5rem;
@@ -11299,9 +11297,21 @@ textarea.form-control-lg {
     padding: 1.5rem;
   }
 }
+
 .btn {
   color: #fff;
 }
 .btn:focus, .btn:hover {
   color: #fff;
+}
+
+.mc-entregas {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(3, 1fr);
+}
+@media (max-width: 767.98px) {
+  .mc-entregas {
+    grid-template-columns: 1fr;
+  }
 }

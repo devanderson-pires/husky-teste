@@ -1,14 +1,34 @@
 .main-content {
     background-color: $mc-body-bg;
     border-radius: 3rem;
-    height: 100vh;
     padding: 3rem;
-}
 
-@include media-breakpoint-down(md) {
-    .main-content {
+    @include media-breakpoint-down(md) {
         border-radius: 1.5rem;
         box-sizing: content-box !important;
         padding: 1.5rem;
+    }
+}
+
+@mixin button-variant($color) {
+    color: $color;
+}
+
+.btn {
+    @include button-variant($mc-body-bg);
+
+    &:focus,
+    &:hover {
+        color: $mc-body-bg;
+    }
+}
+
+.mc-entregas {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(3, 1fr);
+
+    @include media-breakpoint-down(md) {
+        grid-template-columns: 1fr;
     }
 }
