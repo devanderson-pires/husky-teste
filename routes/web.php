@@ -18,5 +18,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/entregas', [EntregaController::class, 'index']);
 Route::post('/entregas', [EntregaController::class, 'store']);
+Route::post('/entregas/{id}/update', [EntregaController::class, 'update']);
+Route::get('/entregas/{id}/delete', [EntregaController::class, 'destroy']);
 Route::get('/clientes', [ClienteController::class, 'index']);
 Route::post('/clientes', [ClienteController::class, 'store']);

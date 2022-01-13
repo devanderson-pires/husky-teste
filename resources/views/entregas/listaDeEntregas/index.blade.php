@@ -8,7 +8,7 @@
                     <h6 class="card-subtitle text-muted">{{$entrega->cliente_nome}}</h6>
                 </div>
 
-                <button type="button" class="btn btn-link text-primary">Editar</button>
+                <button type="button" class="btn btn-link text-primary" data-bs-toggle="modal" data-bs-target="#editarEntregaModal-{{$entrega->id}}">Editar</button>
             </div>
 
             <div class="row justify-content-between mb-2">
@@ -55,5 +55,7 @@
         </div>
         @endswitch
     </div>
+
+    @include('entregas/formulario/editar.index')
     @endforeach
 </div>
