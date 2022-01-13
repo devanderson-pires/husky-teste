@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\EntregaFormRequest;
 use App\Models\Cliente;
 use App\Models\Entrega;
 use App\Models\Entregador;
@@ -24,11 +25,11 @@ class EntregaController extends Controller
         return view('entregas.index', compact('feedback', 'clientes', 'entregadores', 'entregas'));
     }
 
-    public function store(Request $req)
+    public function store(EntregaFormRequest $req)
     {
         Entrega::create($req->all());
-
         $req->session()->flash('feedback', 'Entrega criada com sucesso');
+
         return redirect('/entregas');
     }
 }

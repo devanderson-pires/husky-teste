@@ -3,19 +3,8 @@
 @section('content')
 <h1 class="fs-2 fw-normal mb-4">Clientes</h1>
 
-@if(!empty($feedback))
-<div class="alert alert-success">{{$feedback}}</div>
-@endif
-
-@if($errors->any())
-<div class="alert alert-danger">
-    <ul class="mb-0">
-        @foreach($errors->all() as $error)
-        <li>{{$error}}</li>
-        @endforeach
-    </ul>
-</div>
-@endif
+@include('feedback')
+@include('errors', ['errors' => $errors])
 
 <form method="post" class="row gy-2 gx-3 align-items-center">
     @csrf
