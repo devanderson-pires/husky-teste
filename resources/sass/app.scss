@@ -1,1 +1,14 @@
-@import "variables", "../../node_modules/bootstrap/", "main-content";
+@import "variables", "../../node_modules/bootstrap/", "main-content", "sidebar";
+
+.container {
+    @media (min-width: 576px) and (max-width: 767px) {
+        margin: unset;
+        padding: unset;
+    }
+}
+
+.container-sm {
+    @media (min-width: 576px) and (max-width: 767px) {
+        max-width: unset;
+    }
+}

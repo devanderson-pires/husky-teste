@@ -11,9 +11,16 @@
 </head>
 
 <body>
-    <main class="container my-3 main-content">
-        @yield('content')
-    </main>
+    <div class="container-sm container-md my-3">
+        <div class="row">
+            @include('sidebar.index')
+
+            <main class="main-content col-md-10 col-sm-12">
+                @yield('content')
+            </main>
+        </div>
+    </div>
+
 
     <script src="js/app.js"></script>
 </body>

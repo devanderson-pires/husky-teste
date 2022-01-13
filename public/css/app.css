@@ -3937,7 +3937,8 @@ textarea.form-control-lg {
 .nav-link {
   display: block;
   padding: 0.5rem 1rem;
-  color: #fb6d3a;
+  font-weight: 600;
+  color: #fff;
   text-decoration: none;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
 }
@@ -3947,7 +3948,7 @@ textarea.form-control-lg {
   }
 }
 .nav-link:hover, .nav-link:focus {
-  color: #c9572e;
+  color: #fb6d3a;
 }
 .nav-link.disabled {
   color: #6c757d;
@@ -11313,5 +11314,47 @@ textarea.form-control-lg {
 @media (max-width: 767.98px) {
   .mc-entregas {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .modal-content {
+    width: unset;
+  }
+}
+
+.nav-link {
+  border-top-left-radius: 2rem;
+  border-bottom-left-radius: 2rem;
+}
+.nav-link:focus, .nav-link:hover {
+  background-color: #fff;
+}
+@media (max-width: 767px) {
+  .nav-link {
+    border-top-left-radius: unset;
+    border-bottom-left-radius: unset;
+    color: #181b1a;
+  }
+  .nav-link:focus, .nav-link:hover {
+    background-color: unset;
+  }
+}
+
+.active {
+  background-color: #fff;
+  color: #fb6d3a;
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+  .container {
+    margin: unset;
+    padding: unset;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+  .container-sm {
+    max-width: unset;
   }
 }

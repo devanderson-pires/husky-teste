@@ -1,0 +1,25 @@
+.nav-link {
+    border-top-left-radius: 2rem;
+    border-bottom-left-radius: 2rem;
+
+    &:focus,
+    &:hover {
+        background-color: $mc-body-bg;
+    }
+
+    @media (max-width: 767px) {
+        border-top-left-radius: unset;
+        border-bottom-left-radius: unset;
+        color: $mc-body-color;
+
+        &:focus,
+        &:hover {
+            background-color: unset;
+        }
+    }
+}
+
+.active {
+    background-color: $mc-body-bg;
+    color: $primary;
+}

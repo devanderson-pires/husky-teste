@@ -32,3 +32,9 @@
         grid-template-columns: 1fr;
     }
 }
+
+.modal-content {
+    @include media-breakpoint-down(sm) {
+        width: unset;
+    }
+}
