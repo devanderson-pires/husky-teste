@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\EntregaController;
+use App\Http\Controllers\HomeController;
 // use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -16,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/', [HomeController::class, 'index']);
 Route::get('/entregas', [EntregaController::class, 'index']);
 Route::post('/entregas', [EntregaController::class, 'store']);
 Route::post('/entregas/{id}/update', [EntregaController::class, 'update']);

@@ -12,7 +12,7 @@
         <div class="offcanvas-body">
             <div>
                 <nav class="nav flex-column mt-5">
-                    <a class="nav-link {{ Request::is('/') ? 'active' : '' }}" href="#">Home</a>
+                    <a class="nav-link {{ Request::is('/') ? 'active' : '' }}" href="/">Home</a>
                     <a class="nav-link {{ Request::is('entregas') ? 'active' : '' }}" aria-current="page" href="/entregas">Entregas</a>
                     <a class="nav-link {{ Request::is('clientes') ? 'active' : '' }}" href="/clientes">Clientes</a>
                 </nav>
@@ -23,7 +23,7 @@
 
 <!-- Desktop sidebar -->
 <nav class="nav flex-column mt-5 d-none d-sm-block d-sm-none d-md-block p-0 col-md-2">
-    <a class="nav-link {{ Request::is('/') ? 'active' : '' }}" href="#">Home</a>
+    <a class="nav-link {{ Request::is('/') ? 'active' : '' }}" href="/">Home</a>
     <a class="nav-link {{ Request::is('entregas') ? 'active' : '' }}" aria-current="page" href="/entregas">Entregas</a>
     <a class="nav-link {{ Request::is('clientes') ? 'active' : '' }}" href="/clientes">Clientes</a>
 </nav>
