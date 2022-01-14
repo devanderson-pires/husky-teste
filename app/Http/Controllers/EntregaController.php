@@ -36,16 +36,19 @@ class EntregaController extends Controller
     public function update(EntregaFormRequest $req)
     {
         $data = $req->except('_token');
-        $entrega = Entrega::find($req->id);
+        $entrega = Entrega::findOrFail($req->id);
         $entrega->update($data);
-        $req->session()->flash('feedback', 'Entrega editada com sucesso');
+
+        if ($entrega->wasChanged()) {
+            $req->session()->flash('feedback', 'Entrega editada com sucesso');
+        }
 
         return redirect('/entregas');
     }
 
     public function destroy(Request $req)
     {
-        $entrega = Entrega::find($req->id);
+        $entrega = Entrega::findOrFail($req->id);
         $entrega->delete();
         $req->session()->flash('feedback', 'Entrega deletada com sucesso');
 
