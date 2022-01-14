@@ -1,6 +1,7 @@
 .main-content {
     background-color: $mc-body-bg;
     border-radius: 3rem;
+    min-height: 100vh;
     padding: 3rem;
 
     @include media-breakpoint-down(md) {

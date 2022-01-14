@@ -11289,6 +11289,7 @@ textarea.form-control-lg {
 .main-content {
   background-color: #fff;
   border-radius: 3rem;
+  min-height: 100vh;
   padding: 3rem;
 }
 @media (max-width: 767.98px) {

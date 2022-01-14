@@ -2,7 +2,7 @@
     <div class="modal-dialog">
         <div class="modal-content row">
             <div class="modal-header d-flex justify-content-between">
-                <h5 class="modal-title">Nova entrega</h5>
+                <h5 class="modal-title">Editar entrega</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
 
