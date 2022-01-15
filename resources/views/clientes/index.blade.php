@@ -3,7 +3,7 @@
 @section('content')
 <h1 class="fs-2 fw-normal mb-4">Clientes</h1>
 
-@include('feedback')
+@include('feedbackSuccesses')
 @include('feedbackErrors', ['errors' => $errors])
 
 <form method="post" class="row gy-2 gx-3 align-items-center">

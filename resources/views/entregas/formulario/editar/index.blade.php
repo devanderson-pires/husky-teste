@@ -49,7 +49,7 @@
                     </div>
 
                     <div class="d-flex justify-content-end mt-4">
-                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#confirmDeleteModal">Excluir</button>
+                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#confirmDeleteModal-{{$entrega->id}}">Excluir</button>
                         <button type="submit" class="btn btn-primary ms-1">Salvar</button>
                     </div>
                 </form>
@@ -58,4 +58,4 @@
     </div>
 </div>
 
-@include('confirmDeleteModal')
+@include('entregas/formulario/editar/confirmDeleteModal')

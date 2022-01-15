@@ -8,7 +8,7 @@
     </button>
 </div>
 
-@include('feedback')
+@include('feedbackSuccesses')
 @include('feedbackErrors', ['errors' => $errors])
 
 <div class="row gy-2">
