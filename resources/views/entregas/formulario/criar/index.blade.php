@@ -7,7 +7,7 @@
             </div>
 
             <div class="modal-body">
-                <form method="post">
+                <form action="/entregas" method="post">
                     @csrf
                     <div class="col-auto">
                         <label class="visually-hidden" for="cliente_id">Cliente</label>
