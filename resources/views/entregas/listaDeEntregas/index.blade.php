@@ -1,4 +1,4 @@
-<div class="mc-entregas mt-5">
+<div class="mc-entregas mt-3">
     @foreach($entregas as $entrega)
     <div class="card">
         <div class="card-body">

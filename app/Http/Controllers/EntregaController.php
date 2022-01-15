@@ -54,4 +54,32 @@ class EntregaController extends Controller
 
         return redirect('/entregas');
     }
+
+    public function filtrar(Request $req)
+    {
+        $status = $req->status;
+
+        $clientes = Cliente::query()->orderBy('nome')->get();
+        $entregadores = Entregador::query()->orderBy('nome')->get();
+
+        $query = DB::table('entregas')
+            ->join('clientes', 'entregas.cliente_id', '=', 'clientes.id')
+            ->join('entregadores', 'entregas.entregador_id', '=', 'entregadores.id')
+            ->join('empresas', 'clientes.empresa_id', '=', 'empresas.id')
+            ->select('entregas.*', 'clientes.nome as cliente_nome', 'entregadores.nome as entregador_nome', 'empresas.empresa');
+        $filtro_resultado = null;
+
+        if (!empty($status)) {
+            $entregas = $query->where('status', '=', $status)->get();
+
+            if ($entregas->isEmpty()) {
+                $filtro_resultado = $req->session()->flash('filtro_resultado', "Não encontramos resultados para {$status}");
+                $filtro_resultado = $req->session()->get('filtro_resultado');
+            }
+        } else {
+            $entregas = $query->get();
+        }
+
+        return view('entregas.index', compact('clientes', 'entregadores', 'entregas', 'filtro_resultado', 'status'));
+    }
 }
