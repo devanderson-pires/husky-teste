@@ -23,6 +23,7 @@
 
 
     <script src="/js/app.js"></script>
+    @yield('jsfiles')
 </body>
 
 </html>
