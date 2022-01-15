@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('content')
-<h1 class="fs-2 fw-normal mb-4">Clientes</h1>
+<h1 class="fs-2 fw-normal mb-4">Entregadores</h1>
 
 @include('feedbackSuccesses')
 @include('feedbackErrors', ['errors' => $errors])
@@ -9,19 +9,9 @@
 <form method="post">
     @csrf
     <div class="row gx-2 gy-2">
-        <div class="col-sm-5">
+        <div class="col-sm-6">
             <label for="nome" class="visually-hidden">Nome</label>
             <input type="text" name="nome" id="nome" class="form-control" placeholder="Anderson">
-        </div>
-
-        <div class="col-sm-3">
-            <label class="visually-hidden" for="empresa_id">Empresa</label>
-            <select class="form-select" name="empresa_id" id="empresa_id">
-                <option value="" selected>Selecione a empresa</option>
-                @foreach($empresas as $empresa)
-                <option value="{{$empresa->id}}">{{$empresa->empresa}}</option>
-                @endforeach
-            </select>
         </div>
 
         <div class="col-sm-2">
@@ -34,14 +24,14 @@
     <thead>
         <tr>
             <th scope="col">#</th>
-            <th scope="col">Cliente</th>
+            <th scope="col">Entregador</th>
         </tr>
     </thead>
     <tbody>
-        @foreach($clientes as $cliente)
+        @foreach($entregadores as $entregador)
         <tr>
-            <th scope="row">{{$cliente->id}}</th>
-            <td>{{ $cliente->nome }}</td>
+            <th scope="row">{{$entregador->id}}</th>
+            <td>{{ $entregador->nome }}</td>
         </tr>
         @endforeach
     </tbody>

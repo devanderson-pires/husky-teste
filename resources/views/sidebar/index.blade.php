@@ -15,6 +15,7 @@
                     <a class="nav-link {{ Request::is('/') ? 'active' : '' }}" href="/">Home</a>
                     <a class="nav-link {{ Request::is('entregas') ? 'active' : '' }}" aria-current="page" href="/entregas">Entregas</a>
                     <a class="nav-link {{ Request::is('clientes') ? 'active' : '' }}" href="/clientes">Clientes</a>
+                    <a class="nav-link {{ Request::is('entregadores') ? 'active' : '' }}" href="/entregadores">Entregadores</a>
                 </nav>
             </div>
         </div>
@@ -26,4 +27,5 @@
     <a class="nav-link {{ Request::is('/') ? 'active' : '' }}" href="/">Home</a>
     <a class="nav-link {{ Request::is('entregas') ? 'active' : '' }}" aria-current="page" href="/entregas">Entregas</a>
     <a class="nav-link {{ Request::is('clientes') ? 'active' : '' }}" href="/clientes">Clientes</a>
+    <a class="nav-link {{ Request::is('entregadores') ? 'active' : '' }}" href="/entregadores">Entregadores</a>
 </nav>

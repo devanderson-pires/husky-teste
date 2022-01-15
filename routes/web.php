@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\EntregaController;
+use App\Http\Controllers\EntregadorController;
 use App\Http\Controllers\HomeController;
 // use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
@@ -26,3 +27,5 @@ Route::get('/entregas/filter', [EntregaController::class, 'consultar']);
 Route::get('/entregas/search', [EntregaController::class, 'consultar']);
 Route::get('/clientes', [ClienteController::class, 'index']);
 Route::post('/clientes', [ClienteController::class, 'store']);
+Route::get('/entregadores', [EntregadorController::class, 'index']);
+Route::post('/entregadores', [EntregadorController::class, 'store']);
