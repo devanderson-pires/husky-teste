@@ -55,9 +55,10 @@ class EntregaController extends Controller
         return redirect('/entregas');
     }
 
-    public function filtrar(Request $req)
+    public function consultar(Request $req)
     {
         $status = $req->status;
+        $entregador_nome = $req->entregador;
 
         $clientes = Cliente::query()->orderBy('nome')->get();
         $entregadores = Entregador::query()->orderBy('nome')->get();
@@ -78,6 +79,15 @@ class EntregaController extends Controller
             }
         } else {
             $entregas = $query->get();
+        }
+
+        if (!empty($entregador_nome)) {
+            $entregas = $query->where('entregador_nome', 'like', "{$entregador_nome}%")->get();
+
+            if ($entregas->isEmpty()) {
+                $filtro_resultado = $req->session()->flash('filtro_resultado', "Não encontramos resultados para {$entregador_nome}");
+                $filtro_resultado = $req->session()->get('filtro_resultado');
+            }
         }
 
         return view('entregas.index', compact('clientes', 'entregadores', 'entregas', 'filtro_resultado', 'status'));
