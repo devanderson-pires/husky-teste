@@ -23,4 +23,6 @@
 <p class="h4">{{$filtro_resultado}}</p>
 @endif
 
+{{$entregas->appends(request()->query())->links('pagination')}}
+
 @endsection

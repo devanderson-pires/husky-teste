@@ -46,3 +46,8 @@
         width: unset;
     }
 }
+
+.page-active {
+    background-color: $primary;
+    color: $mc-body-bg;
+}

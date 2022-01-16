@@ -20,7 +20,7 @@ class EntregaController extends Controller
             ->join('clientes', 'entregas.cliente_id', '=', 'clientes.id')
             ->join('entregadores', 'entregas.entregador_id', '=', 'entregadores.id')
             ->join('empresas', 'clientes.empresa_id', '=', 'empresas.id')
-            ->select('entregas.*', 'clientes.nome as cliente_nome', 'entregadores.nome as entregador_nome', 'empresas.empresa')->get();
+            ->select('entregas.*', 'clientes.nome as cliente_nome', 'entregadores.nome as entregador_nome', 'empresas.empresa')->orderBy('id', 'desc')->paginate(6);
 
         return view('entregas.index', compact('feedback', 'clientes', 'entregadores', 'entregas'));
     }
@@ -71,24 +71,24 @@ class EntregaController extends Controller
         $filtro_resultado = null;
 
         if (!empty($status)) {
-            $entregas = $query->where('status', '=', $status)->get();
+            $entregas = $query->where('status', '=', $status)->orderBy('id', 'desc')->paginate(6);
 
             if ($entregas->isEmpty()) {
                 $filtro_resultado = $req->session()->flash('filtro_resultado', "Não encontramos resultados para {$status}");
                 $filtro_resultado = $req->session()->get('filtro_resultado');
             }
-        } else {
-            $entregas = $query->get();
         }
 
         if (!empty($entregador_nome)) {
-            $entregas = $query->where('entregador_nome', 'like', "{$entregador_nome}%")->get();
+            $entregas = $query->where('entregadores.nome', 'like', "{$entregador_nome}%")->orderBy('id', 'desc')->paginate(6);
 
             if ($entregas->isEmpty()) {
                 $filtro_resultado = $req->session()->flash('filtro_resultado', "Não encontramos resultados para {$entregador_nome}");
                 $filtro_resultado = $req->session()->get('filtro_resultado');
             }
         }
+
+        if (empty($status) && empty($entregador_nome)) return redirect('entregas');
 
         return view('entregas.index', compact('clientes', 'entregadores', 'entregas', 'filtro_resultado', 'status'));
     }

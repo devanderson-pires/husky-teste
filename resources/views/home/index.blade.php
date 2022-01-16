@@ -3,7 +3,11 @@
 @section('content')
 <h1 class="fs-2 fw-normal mb-4">Home</h1>
 
+@if($cancelada === 0 && $finalizada === 0)
+<p class="fs-5">Não há dados a exibir</p>
+@else
 <div id="chart_entregas" class="w-100"></div>
+@endif
 @endsection
 
 @section('jsfiles')
@@ -27,6 +31,7 @@
         const options = {
             'title': 'Total de Entregas',
             'height': 300,
+            'colors': ['red', 'green']
         };
         const chart = new google.visualization.PieChart(document.getElementById('chart_entregas'));
 

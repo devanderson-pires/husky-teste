@@ -11333,6 +11333,11 @@ textarea.form-control-lg {
   }
 }
 
+.page-active {
+  background-color: #fb6d3a;
+  color: #fff;
+}
+
 .nav-link {
   border-top-left-radius: 2rem;
   border-bottom-left-radius: 2rem;
