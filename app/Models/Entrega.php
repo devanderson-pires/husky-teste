@@ -9,7 +9,6 @@ class Entrega extends Model
 {
     use HasFactory;
 
-    public $timestamps = false;
     protected $fillable = ['cliente_id', 'entregador_id', 'status', 'ponto_coleta', 'ponto_destino'];
 
     public function cliente()

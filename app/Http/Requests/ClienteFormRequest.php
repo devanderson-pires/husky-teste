@@ -25,7 +25,6 @@ class ClienteFormRequest extends FormRequest
     {
         return [
             'nome' => 'required|min:2',
-            'empresa_id' => 'required'
         ];
     }
 
@@ -34,7 +33,6 @@ class ClienteFormRequest extends FormRequest
         return [
             'nome.required' => 'Nome é obrigatório',
             'nome.min' => 'Nome precisa ter pelo menos 2 caracteres',
-            'empresa_id.required' => 'Empresa é obrigatório'
         ];
     }
 }

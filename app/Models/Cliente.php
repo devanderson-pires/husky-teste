@@ -10,12 +10,7 @@ class Cliente extends Model
     use HasFactory;
 
     public $timestamps = false;
-    protected $fillable = ['nome', 'empresa_id'];
-
-    public function empresa()
-    {
-        return $this->belongsTo(Empresa::class);
-    }
+    protected $fillable = ['nome'];
 
     public function entregas()
     {

@@ -19,8 +19,7 @@ class EntregaController extends Controller
         $entregas = DB::table('entregas')
             ->join('clientes', 'entregas.cliente_id', '=', 'clientes.id')
             ->join('entregadores', 'entregas.entregador_id', '=', 'entregadores.id')
-            ->join('empresas', 'clientes.empresa_id', '=', 'empresas.id')
-            ->select('entregas.*', 'clientes.nome as cliente_nome', 'entregadores.nome as entregador_nome', 'empresas.empresa')->orderBy('id', 'desc')->paginate(6);
+            ->select('entregas.*', 'clientes.nome as cliente_nome', 'entregadores.nome as entregador_nome')->orderBy('created_at', 'desc')->paginate(6);
 
         return view('entregas.index', compact('feedback', 'clientes', 'entregadores', 'entregas'));
     }
@@ -66,12 +65,11 @@ class EntregaController extends Controller
         $query = DB::table('entregas')
             ->join('clientes', 'entregas.cliente_id', '=', 'clientes.id')
             ->join('entregadores', 'entregas.entregador_id', '=', 'entregadores.id')
-            ->join('empresas', 'clientes.empresa_id', '=', 'empresas.id')
-            ->select('entregas.*', 'clientes.nome as cliente_nome', 'entregadores.nome as entregador_nome', 'empresas.empresa');
+            ->select('entregas.*', 'clientes.nome as cliente_nome', 'entregadores.nome as entregador_nome');
         $filtro_resultado = null;
 
         if (!empty($status)) {
-            $entregas = $query->where('status', '=', $status)->orderBy('id', 'desc')->paginate(6);
+            $entregas = $query->where('status', '=', $status)->orderBy('created_at', 'desc')->paginate(6);
 
             if ($entregas->isEmpty()) {
                 $filtro_resultado = $req->session()->flash('filtro_resultado', "Não encontramos resultados para {$status}");
@@ -80,7 +78,7 @@ class EntregaController extends Controller
         }
 
         if (!empty($entregador_nome)) {
-            $entregas = $query->where('entregadores.nome', 'like', "{$entregador_nome}%")->orderBy('id', 'desc')->paginate(6);
+            $entregas = $query->where('entregadores.nome', 'like', "{$entregador_nome}%")->orderBy('created_at', 'desc')->paginate(6);
 
             if ($entregas->isEmpty()) {
                 $filtro_resultado = $req->session()->flash('filtro_resultado', "Não encontramos resultados para {$entregador_nome}");

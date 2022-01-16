@@ -9,19 +9,9 @@
 <form method="post">
     @csrf
     <div class="row gx-2 gy-2">
-        <div class="col-sm-5">
+        <div class="col-sm-6">
             <label for="nome" class="visually-hidden">Nome</label>
-            <input type="text" name="nome" id="nome" class="form-control" placeholder="Anderson">
-        </div>
-
-        <div class="col-sm-3">
-            <label class="visually-hidden" for="empresa_id">Empresa</label>
-            <select class="form-select" name="empresa_id" id="empresa_id">
-                <option value="" selected>Selecione a empresa</option>
-                @foreach($empresas as $empresa)
-                <option value="{{$empresa->id}}">{{$empresa->empresa}}</option>
-                @endforeach
-            </select>
+            <input type="text" name="nome" id="nome" class="form-control" placeholder="Quentinhas">
         </div>
 
         <div class="col-sm-2">

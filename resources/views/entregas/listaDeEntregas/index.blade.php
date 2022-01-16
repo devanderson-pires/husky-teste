@@ -4,8 +4,8 @@
         <div class="card-body">
             <div class="d-flex justify-content-between mb-4">
                 <div>
-                    <h5 class="card-title">{{$entrega->empresa}}</h5>
-                    <h6 class="card-subtitle text-muted">{{$entrega->cliente_nome}}</h6>
+                    <h5 class="card-title">{{$entrega->cliente_nome}}</h5>
+                    <!-- <h6 class="card-subtitle text-muted">Nome do cliente do cliente da empresa de entregas?</h6> -->
                 </div>
 
                 <button type="button" class="btn btn-link text-primary" data-bs-toggle="modal" data-bs-target="#editarEntregaModal-{{$entrega->id}}">Editar</button>

@@ -20,6 +20,7 @@ class CreateEntregasTable extends Migration
             $table->string('status');
             $table->string('ponto_coleta');
             $table->string('ponto_destino');
+            $table->timestamps();
             $table->foreign('cliente_id')->references('id')->on('clientes');
             $table->foreign('entregador_id')->references('id')->on('entregadores');
         });
