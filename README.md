@@ -19,7 +19,7 @@ cd husky-teste
 composer install
 ```
 
-Copie o arquivo `.env.example` na raiz do projeto, renomeie para `.env` e altere as seguites variáveis para conectar seu banco de dados
+Copie o arquivo `.env.example` na raiz do projeto, renomeie para `.env` e altere as seguintes variáveis para conectar seu banco de dados
 ```
 DB_CONNECTION
 DB_HOST
@@ -29,7 +29,7 @@ DB_USERNAME
 DB_PASSWORD
 ```
 
-:warning: Por padrão, o arquivo `config/database.php` utiliza mysql
+:warning: Por padrão, o arquivo `config/database.php` utiliza o mysql
 ```
 'default' => env('DB_CONNECTION', 'mysql')
 ```
