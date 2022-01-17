@@ -34,10 +34,11 @@ DB_PASSWORD
 'default' => env('DB_CONNECTION', 'mysql')
 ```
 
-Rode as migrations e o seeder EntregadorSeeder
+Rode as migrations, o seeder EntregadorSeeder e key generate
 ```
 php artisan migrate
 php artisan db:seed EntregadorSeeder
+php artisan key:generate
 ```
 
 Inicie o projeto
