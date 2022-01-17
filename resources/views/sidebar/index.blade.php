@@ -1,7 +1,7 @@
 <!-- Mobile sidebar -->
 <div class="col-2 d-block .d-sm-none d-md-none mb-3">
     <a class="" data-bs-toggle="offcanvas" href="#sidebar" role="button" aria-controls="sidebar">
-        Menu
+        <i data-feather="menu" role="img" aria-label="Menu"></i>
     </a>
 
     <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebar" aria-labelledby="sidebarLabel">

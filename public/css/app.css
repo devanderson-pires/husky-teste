@@ -11361,6 +11361,11 @@ textarea.form-control-lg {
   color: #fb6d3a;
 }
 
+.offcanvas-start {
+  width: 100%;
+  max-width: 400px;
+}
+
 @media (min-width: 576px) and (max-width: 767px) {
   .container {
     margin: unset;
