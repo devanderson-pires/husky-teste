@@ -8,8 +8,7 @@
     </button>
 </div>
 
-@include('feedbackSuccesses')
-@include('feedbackErrors', ['errors' => $errors])
+@include('feedbacks', ['errors' => $errors])
 
 <div class="row gy-2">
     @include('entregas/formulario/buscar.index')

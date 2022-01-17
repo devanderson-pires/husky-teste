@@ -13,7 +13,9 @@ class EntregaController extends Controller
 {
     public function index(Request $req)
     {
-        $feedback = $req->session()->get('feedback');
+        $feedbackSuccess = $req->session()->get('feedbackSuccess');
+        $feedbackError = $req->session()->get('feedbackError');
+
         $clientes = Cliente::query()->orderBy('nome')->get();
         $entregadores = Entregador::query()->orderBy('nome')->get();
         $entregas = DB::table('entregas')
@@ -21,15 +23,15 @@ class EntregaController extends Controller
             ->join('entregadores', 'entregas.entregador_id', '=', 'entregadores.id')
             ->select('entregas.*', 'clientes.nome as cliente_nome', 'entregadores.nome as entregador_nome')->orderBy('created_at', 'desc')->paginate(6);
 
-        return view('entregas.index', compact('feedback', 'clientes', 'entregadores', 'entregas'));
+        return view('entregas.index', compact('feedbackSuccess', 'feedbackError', 'clientes', 'entregadores', 'entregas'));
     }
 
     public function store(EntregaFormRequest $req)
     {
         Entrega::create($req->all());
-        $req->session()->flash('feedback', 'Entrega criada com sucesso');
+        $req->session()->flash('feedbackSuccess', 'Entrega criada com sucesso');
 
-        return redirect('/entregas');
+        return redirect('entregas');
     }
 
     public function update(EntregaFormRequest $req)
@@ -39,19 +41,19 @@ class EntregaController extends Controller
         $entrega->update($data);
 
         if ($entrega->wasChanged()) {
-            $req->session()->flash('feedback', 'Entrega editada com sucesso');
+            $req->session()->flash('feedbackSuccess', 'Entrega editada com sucesso');
         }
 
-        return redirect('/entregas');
+        return redirect('entregas');
     }
 
     public function destroy(Request $req)
     {
         $entrega = Entrega::findOrFail($req->id);
         $entrega->delete();
-        $req->session()->flash('feedback', 'Entrega deletada com sucesso');
+        $req->session()->flash('feedbackSuccess', 'Entrega deletada com sucesso');
 
-        return redirect('/entregas');
+        return redirect('entregas');
     }
 
     public function consultar(Request $req)

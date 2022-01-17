@@ -3,15 +3,14 @@
 @section('content')
 <h1 class="fs-2 fw-normal mb-4">Entregadores</h1>
 
-@include('feedbackSuccesses')
-@include('feedbackErrors', ['errors' => $errors])
+@include('feedbacks', ['errors' => $errors])
 
 <form method="post">
     @csrf
     <div class="row gx-2 gy-2">
         <div class="col-sm-6">
             <label for="nome" class="visually-hidden">Nome</label>
-            <input type="text" name="nome" id="nome" class="form-control" placeholder="Anderson">
+            <input type="text" name="nome" id="nome" class="form-control @error('nome') border-danger @enderror" placeholder="ex Anderson">
         </div>
 
         <div class="col-sm-2">
@@ -25,13 +24,19 @@
         <tr>
             <th scope="col">#</th>
             <th scope="col">Entregador</th>
+            <th scope="col">Ações</th>
         </tr>
     </thead>
     <tbody>
         @foreach($entregadores as $entregador)
         <tr>
-            <th scope="row">{{$entregador->id}}</th>
-            <td>{{ $entregador->nome }}</td>
+            <th scope="row" class="align-middle">{{$entregador->id}}</th>
+            <td class="align-middle">{{$entregador->nome}}</td>
+            <td>
+                <a href="/entregadores/{{$entregador->id}}/delete" class="btn btn-danger btn-sm" role="button">
+                    <i data-feather="trash"></i>
+                </a>
+            </td>
         </tr>
         @endforeach
     </tbody>

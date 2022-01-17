@@ -19,13 +19,18 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [HomeController::class, 'index']);
+
 Route::get('/entregas', [EntregaController::class, 'index']);
 Route::post('/entregas', [EntregaController::class, 'store']);
 Route::post('/entregas/{id}/update', [EntregaController::class, 'update']);
 Route::get('/entregas/{id}/delete', [EntregaController::class, 'destroy']);
 Route::get('/entregas/filter', [EntregaController::class, 'consultar']);
 Route::get('/entregas/search', [EntregaController::class, 'consultar']);
+
 Route::get('/clientes', [ClienteController::class, 'index']);
 Route::post('/clientes', [ClienteController::class, 'store']);
+Route::get('/clientes/{id}/delete', [ClienteController::class, 'destroy']);
+
 Route::get('/entregadores', [EntregadorController::class, 'index']);
 Route::post('/entregadores', [EntregadorController::class, 'store']);
+Route::get('/entregadores/{id}/delete', [EntregadorController::class, 'destroy']);
