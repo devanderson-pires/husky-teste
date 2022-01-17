@@ -29,6 +29,11 @@ DB_USERNAME
 DB_PASSWORD
 ```
 
+:warning: Por padrão, o arquivo `config/database.php` utiliza mysql
+```
+'default' => env('DB_CONNECTION', 'mysql')
+```
+
 Rode as migrations e o seeder EntregadorSeeder
 ```
 php artisan migrate
