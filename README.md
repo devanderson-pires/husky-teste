@@ -1,5 +1,5 @@
 # Husky Teste
-[Demo](https://husky-teste.herokuapp.com/)
+Desenvolvedor Fullstack - Teste
 
 ## Como executar
 ### Pré-requisitos
